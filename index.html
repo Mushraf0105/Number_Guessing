@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Guessing Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-container">
+    <div class="game-card">
+      <header class="game-header">
+        <h1>Number Guessing Game</h1>
+        <p class="game-description">Guess the secret number between <strong>1</strong> and <strong>100</strong>.</p>
+      </header>
+
+      <!-- Guess Form -->
+      <form id="guessForm" class="guess-form" novalidate>
+        <label for="guessInput" class="input-label">Enter your guess:</label>
+        <div class="input-group">
+          <input 
+            type="number" 
+            id="guessInput" 
+            name="guess" 
+            class="guess-input" 
+            min="1" 
+            max="100" 
+            placeholder="1 - 100" 
+            required 
+            autocomplete="off"
+          >
+          <button type="submit" id="submitBtn" class="btn btn-primary">Submit Guess</button>
+        </div>
+      </form>
+
+      <!-- Higher / Lower Feedback Message -->
+      <div id="feedback" class="feedback-message" aria-live="polite">Enter a number to start playing!</div>
+
+      <!-- Attempt Counter & Guess Tracking -->
+      <div class="stats-container">
+        <div class="stat-box">
+          <span class="stat-label">Attempts</span>
+          <span id="attemptCount" class="stat-value">0</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Previous Guesses</span>
+          <span id="guessHistory" class="stat-value stat-history">None</span>
+        </div>
+      </div>
+
+      <!-- Play Again Button -->
+      <button type="button" id="playAgainBtn" class="btn btn-reset">Play Again</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
